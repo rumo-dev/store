@@ -1,0 +1,196 @@
+[
+ {
+  "id": "latte-dark",
+  "cat": "discord",
+  "art": "theme",
+  "hue": 265,
+  "name": "Latte Dark ― コーヒー色のDiscordテーマ",
+  "price": 0,
+  "date": "2026-10-10",
+  "version": "1.0.0",
+  "short": "目に優しい、ミルクコーヒー色のダークテーマ。変数だけで作った軽量CSS。",
+  "desc": "背景・サイドバー・入力欄の配色をあたたかい茶色系に変更します。色は先頭の変数だけで調整できるので、好みの色味に簡単にカスタマイズ可能です。",
+  "features": [
+   "CSS変数のみ、約30行の軽量設計",
+   "色の変更は先頭の変数だけでOK",
+   "Vencord / BetterDiscord に対応"
+  ],
+  "specs": {
+   "種別": "CSSテーマ",
+   "対応": "Vencord / BetterDiscord",
+   "ライセンス": "個人利用OK・再配布は要クレジット"
+  },
+  "code": "/* Latte Dark v1.0.0 - SHIKI KUJO OFFICIAL STORE */\n:root {\n  --latte-bg:      #2b211b;\n  --latte-bg-2:    #231a15;\n  --latte-bg-3:    #1b1310;\n  --latte-text:    #f1e4d3;\n  --latte-accent:  #d8955f;\n}\n.theme-dark, .theme-darker, .theme-light {\n  --background-primary:            var(--latte-bg);\n  --background-secondary:          var(--latte-bg-2);\n  --background-secondary-alt:      var(--latte-bg-3);\n  --background-tertiary:           var(--latte-bg-3);\n  --channeltextarea-background:    var(--latte-bg-3);\n  --text-normal:                   var(--latte-text);\n  --brand-experiment:              var(--latte-accent);\n  --interactive-active:            var(--latte-accent);\n}",
+  "sample": true,
+  "url": ""
+ },
+ {
+  "id": "cozy-overlay",
+  "cat": "obs",
+  "art": "overlay",
+  "hue": 215,
+  "name": "Cozy Stream Overlay Pack",
+  "price": 1500,
+  "date": "2026-10-05",
+  "version": "1.2",
+  "short": "あたたかい木目調の配信オーバーレイ一式。待機・本編・休憩の3シーン付き。",
+  "desc": "待機画面・本編フレーム・休憩画面・終了画面をセットにした配信オーバーレイです。OBSにそのまま読み込める画像＋シーンコレクション(JSON)を同梱しています。",
+  "features": [
+   "1920×1080 PNG / 透過対応",
+   "OBSシーンコレクション(JSON)同梱",
+   "カラーバリエーション3色",
+   "商用配信OK(収益化チャンネル可)"
+  ],
+  "specs": {
+   "種別": "画像素材 + シーンJSON",
+   "対応": "OBS Studio 28以降",
+   "容量": "約 18MB"
+  },
+  "url": "",
+  "sample": true
+ },
+ {
+  "id": "maru-tote",
+  "cat": "goods",
+  "art": "tote",
+  "hue": 25,
+  "name": "ロゴ キャンバストート",
+  "price": 2400,
+  "date": "2026-10-01",
+  "version": "",
+  "short": "厚手のコットンキャンバス。A4が入るちょうどいいサイズ。",
+  "desc": "生成り色の厚手キャンバスに、ブラウンのロゴをシルクプリント。内ポケット付きで、配信機材の小物持ち運びにも。",
+  "features": [
+   "綿100% / 縦38×横34cm",
+   "内ポケット付き",
+   "受注生産(発送まで約7〜10日)"
+  ],
+  "specs": {
+   "種別": "実物グッズ",
+   "素材": "コットン100%",
+   "発送": "あんしんBOOTH便(BOOTHの配送)"
+  },
+  "url": "",
+  "sample": true
+ },
+ {
+  "id": "soft-alerts",
+  "cat": "obs",
+  "art": "alert",
+  "hue": 200,
+  "name": "やさしいアラートセット",
+  "price": 800,
+  "date": "2026-09-20",
+  "version": "1.0",
+  "short": "フォロー・サブスク・レイド用の、控えめでかわいい通知アニメ。",
+  "desc": "音量や動きを抑えた、長時間配信でも疲れにくい通知アニメーションです。ブラウザソース用のHTMLとして動作します。",
+  "features": [
+   "ブラウザソースで使えるHTML",
+   "効果音は別ファイルで差し替え可",
+   "文言・色は設定ファイルで変更"
+  ],
+  "specs": {
+   "種別": "ブラウザソース(HTML/CSS/JS)",
+   "対応": "OBS Studio / Streamlabs",
+   "容量": "約 4MB"
+  },
+  "url": "",
+  "sample": true
+ },
+ {
+  "id": "compact-chat",
+  "cat": "discord",
+  "art": "compact",
+  "hue": 285,
+  "name": "Compact Chat Tweaks",
+  "price": 500,
+  "date": "2026-09-02",
+  "version": "1.1.0",
+  "short": "メンバーリストと余白を詰めて、チャット欄を広く使えるCSS詰め合わせ。",
+  "desc": "余白・アバターサイズ・スタンプの大きさなどを調整するCSSパックです。必要な項目だけをコメントアウトで切り替えられます。",
+  "features": [
+   "14個の調整項目を個別にON/OFF",
+   "ノートPCの小さな画面向け",
+   "アップデート無料(最新版を再DL)"
+  ],
+  "specs": {
+   "種別": "CSSスニペット",
+   "対応": "Vencord / BetterDiscord",
+   "容量": "5KB"
+  },
+  "url": "",
+  "sample": true
+ },
+ {
+  "id": "scene-timer",
+  "cat": "obs",
+  "art": "script",
+  "hue": 190,
+  "name": "Scene Timer ― シーン別タイマー(Luaスクリプト)",
+  "price": 0,
+  "date": "2026-08-30",
+  "version": "0.9.1",
+  "short": "シーンごとの滞在時間を計測してテキストソースに表示する無料スクリプト。",
+  "desc": "OBSの「ツール → スクリプト」から読み込んで使うLuaスクリプトです。休憩までの残り時間や、トーク枠の経過時間の表示に便利です。",
+  "features": [
+   "シーン切替で自動リセット",
+   "テキストソースへ自動反映",
+   "完全無料・設定はスクリプト画面から"
+  ],
+  "specs": {
+   "種別": "Luaスクリプト",
+   "対応": "OBS Studio 28以降",
+   "ライセンス": "MIT"
+  },
+  "url": "",
+  "sample": true
+ },
+ {
+  "id": "mini-sticker",
+  "cat": "goods",
+  "art": "sticker",
+  "hue": 15,
+  "name": "ミニステッカー 5枚セット",
+  "price": 600,
+  "date": "2026-08-15",
+  "version": "",
+  "short": "PCやタンブラーに貼れる、耐水ミニステッカー。",
+  "desc": "マスコット・ロゴ・ことばをデザインした耐水ステッカー5種入り。ひとつ約5cm。",
+  "features": [
+   "耐水・耐光ラミネート",
+   "5種×各1枚",
+   "ポスト投函で全国送料一律"
+  ],
+  "specs": {
+   "種別": "実物グッズ",
+   "サイズ": "約5cm角",
+   "発送": "BOOTHの配送方法に準拠"
+  },
+  "url": "",
+  "sample": true
+ },
+ {
+  "id": "nukumori-mug",
+  "cat": "goods",
+  "art": "mug",
+  "hue": 35,
+  "name": "ぬくもりマグカップ",
+  "price": 1800,
+  "date": "2026-07-20",
+  "version": "",
+  "short": "長時間配信のおともに。手になじむ丸いフォルムのマグ。",
+  "desc": "電子レンジ・食洗機対応の陶器マグ。ミルクコーヒーが映える、ベージュ×ブラウンの2トーン。",
+  "features": [
+   "容量 約300ml",
+   "電子レンジ・食洗機OK",
+   "ギフト箱入り"
+  ],
+  "specs": {
+   "種別": "実物グッズ",
+   "素材": "陶器",
+   "サイズ": "径8×高さ9cm"
+  },
+  "url": "",
+  "sample": true
+ }
+]

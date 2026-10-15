@@ -1,0 +1,43 @@
+name: Build & Deploy (GitHub Pages)
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "0 18 * * *"   # 毎日 03:00 JST (UTC 18:00) に BOOTH から最新情報を取得
+  workflow_dispatch:        # Actionsタブから手動実行も可能
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # BOOTHの商品・価格を取得して dist/ を生成(失敗時はここで停止し、公開中のサイトは変更されません)
+      - name: Fetch BOOTH items & build
+        run: node scripts/build.mjs
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - id: deployment
+        uses: actions/deploy-pages@v4

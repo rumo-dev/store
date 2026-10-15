@@ -1,0 +1,66 @@
+{
+  "name": "SHIKI KUJO OFFICIAL STORE",
+  "tagline": "配信まわりと暮らしを、ちょっとあたたかく。",
+  "links": {
+    "booth": "",
+    "discord": "",
+    "x": "",
+    "form": "",
+    "mail": ""
+  },
+  "newDays": 30,
+  "categories": {
+    "goods": {
+      "label": "グッズ",
+      "en": "Goods",
+      "color": "#c07148",
+      "icon": "🧺",
+      "desc": "マグ・トート・ステッカーなどの実物グッズ"
+    },
+    "obs": {
+      "label": "OBSプラグイン等",
+      "en": "OBS",
+      "color": "#5f7aa3",
+      "icon": "🎬",
+      "desc": "オーバーレイ・アラート・便利スクリプト"
+    },
+    "discord": {
+      "label": "Discord CSS",
+      "en": "Discord",
+      "color": "#7d6cb3",
+      "icon": "💬",
+      "desc": "見た目を整えるテーマとCSS詰め合わせ"
+    },
+    "other": {
+      "label": "その他",
+      "en": "Other",
+      "color": "#8a7a5c",
+      "icon": "✨",
+      "desc": "上のどれにも当てはまらない、その他の作品"
+    }
+  },
+  "categoryRules": [
+    {
+      "cat": "discord",
+      "match": [
+        "discord",
+        "ディスコード",
+        "vencord",
+        "betterdiscord"
+      ]
+    },
+    {
+      "cat": "obs",
+      "match": [
+        "obs",
+        "オーバーレイ",
+        "overlay",
+        "配信",
+        "アラート",
+        "ブラウザソース",
+        "streamlabs",
+        "スクリプト"
+      ]
+    }
+  ]
+}
