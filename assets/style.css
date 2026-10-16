@@ -226,7 +226,9 @@ details.qa .ans { padding: 0 20px 18px 60px; color: #5a463a; }
 .booth-note .btn { margin-left: auto; flex: none; }
 @media (max-width: 720px) { .booth-note { flex-direction: column; align-items: flex-start; } .booth-note .btn { margin-left: 0; } }
 
-.card .thumb img, .main-art img, .hero-art .card-mini img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.card .thumb img, .hero-art .card-mini img { width: 100%; height: 100%; object-fit: contain; display: block; }  /* 画像全体を表示(切り取らない) */
+.main-art img { width: 100%; height: auto; display: block; }
+.hero-art .card-mini { aspect-ratio: 4 / 3; background: var(--cream); }
 .main-art img { height: auto; }
 .badge-new.sold { background: #6b5a4e; }
 .desc { white-space: pre-line; }

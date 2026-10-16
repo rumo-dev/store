@@ -31,7 +31,7 @@
   /* BOOTHの画像があればそれを、なければ描画SVGを使う */
   function thumb(p) {
     return p.image
-      ? `<img class="thumb-img" data-pid="${esc(p.id)}" src="${esc(p.image)}" alt="${esc(p.name)}" loading="lazy" referrerpolicy="no-referrer">`
+      ? `<img class="thumb-img" data-pid="${esc(p.id)}" src="${esc(p.image)}" alt="${esc(p.name)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">`
       : art(p);
   }
   document.addEventListener("error", (e) => {

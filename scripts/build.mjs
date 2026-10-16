@@ -73,7 +73,7 @@ function mapItem(j, site) {
   const cat = infer(site, text, physical);
   const desc = String(j.description || "").replace(/\r/g, "").trim();
   const firstLine = desc.split("\n").map((l) => l.trim()).find(Boolean) || "";
-  const images = (j.images || []).map((i) => i.resized || i.original).filter(Boolean);
+  const images = (j.images || []).map((i) => i.original || i.resized).filter(Boolean);   // original=高解像度・元の縦横比のまま
   const id = String(j.id);
   return {
     id, cat, source: "booth",

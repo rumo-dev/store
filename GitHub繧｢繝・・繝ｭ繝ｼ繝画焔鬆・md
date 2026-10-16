@@ -1,0 +1,90 @@
+# GitHubへのアップロード手順（パソコンだけ・コマンド不要）
+
+## 0. 準備
+- GitHubアカウントを用意（無料）: https://github.com/signup
+- 受け取ったzipを**展開**しておく（中に `index.html` や `assets` フォルダなどが出てきます）
+
+## 1. リポジトリを作る
+1. GitHub右上の「＋」→ **New repository**
+2. Repository name: 好きな名前（例 `shiki-kujo-store`）
+3. **Public** を選ぶ（無料のGitHub Pagesは公開リポジトリが前提です）
+4. 「Add a README file」は**チェックしない** → **Create repository**
+
+## 2. ファイルをアップロード
+1. 作成後の画面の **「uploading an existing file」** リンクをクリック
+2. 展開したフォルダの**中身をすべて**（フォルダごとではなく、中身）ブラウザ画面へドラッグ＆ドロップ
+   - `assets` `data` `scripts` フォルダと、`*.html`、`README.md` などが対象
+   - `.github` フォルダは隠しフォルダのため、ドラッグしても入らないことがあります → **手順3で個別に作成**します
+3. 下の **Commit changes** を押す（ブランチは `main` のまま）
+
+## 3. 自動更新の設定ファイルを作る（`.github` が入らなかった場合）
+1. リポジトリ画面で **Add file → Create new file**
+2. ファイル名の欄に次をそのまま入力（`/` を入力するとフォルダになります）
+   `.github/workflows/pages.yml`
+3. 本文に、下の「pages.yml の中身」をすべて貼り付け
+4. **Commit changes**
+（最初のアップロードで `.github` が入っていれば、この手順は不要です。リポジトリに `.github/workflows/pages.yml` があるか確認してください）
+
+## 4. GitHub Pages を有効にする
+1. リポジトリの **Settings → Pages**
+2. **Build and deployment → Source** を **「GitHub Actions」** にする
+3. **Actions** タブを開き、「Build & Deploy (GitHub Pages)」が緑になるのを待つ（1〜2分）
+   - まだ動いていなければ、左の一覧から選んで **Run workflow**
+4. 公開URL: `https://<GitHubユーザー名>.github.io/<リポジトリ名>/`
+
+## 5. BOOTHと連携する
+1. リポジトリで `data/site.json` を開き、鉛筆アイコン（Edit）をクリック
+2. `"booth": ""` を `"booth": "https://あなたのID.booth.pm"` に書き換えて **Commit changes**
+3. 自動でビルドされ、BOOTHの商品が反映されます（Actionsが緑になれば完了）
+   - 赤(失敗)になった場合は、実行をクリック → ログの `[build] ERROR:` の行を確認
+
+## 6. 以降の更新
+- BOOTHで商品を追加・変更 → 毎日3:00(JST)に自動反映（すぐ反映したいときは Actions → Run workflow）
+- 文章やリンクを直したい → GitHub上で該当ファイルを開いて編集し Commit
+
+## pages.yml の中身
+```yaml
+name: Build & Deploy (GitHub Pages)
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "0 18 * * *"   # 毎日 03:00 JST (UTC 18:00) に BOOTH から最新情報を取得
+  workflow_dispatch:        # Actionsタブから手動実行も可能
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # BOOTHの商品・価格を取得して dist/ を生成(失敗時はここで停止し、公開中のサイトは変更されません)
+      - name: Fetch BOOTH items & build
+        run: node scripts/build.mjs
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - id: deployment
+        uses: actions/deploy-pages@v4
+```
