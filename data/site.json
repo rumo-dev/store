@@ -2,11 +2,10 @@
   "name": "SHIKI KUJO OFFICIAL STORE",
   "tagline": "配信まわりと暮らしを、ちょっとあたたかく。",
   "links": {
-    "booth": "",
-    "discord": "",
-    "x": "",
-    "form": "",
-    "mail": ""
+    "booth": "https://shiki-official.booth.pm/",
+    "discord": "https://discord.gg/w2TT3auda6",
+    "x": "https://x.com/ShikiKujo",
+    "form": ""
   },
   "newDays": 30,
   "categories": {
