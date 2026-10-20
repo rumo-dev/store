@@ -10,7 +10,7 @@ BOOTHショップ ──(Actions: node scripts/build.mjs)──> data/products.j
 ```
 
 - 実行タイミング：**mainへのpush時 / 毎日 03:00 JST / Actionsタブからの手動実行**（`.github/workflows/pages.yml`）
-- 取得内容：商品名・価格(バリエーションの最安〜最高)・説明・画像・タグ・公開日・売り切れ
+- 取得内容：商品名・価格(バリエーションの最安-最高)・説明・画像・タグ・公開日・売り切れ
 - カテゴリは商品名・タグ・BOOTHカテゴリから自動判定（`data/site.json` の `categoryRules`）。実物(配送)商品は「グッズ」
 - BOOTHの取得に**失敗した場合はデプロイされず**、公開中のサイトはそのまま残ります（Actionsが赤くなるので気づけます）
 
